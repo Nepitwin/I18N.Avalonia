@@ -1,0 +1,11 @@
+<Application xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:themes="clr-namespace:Material.Styles.Themes;assembly=Material.Styles"
+             x:Class="I18N.Prism.Example.App">
+    <Application.Resources>
+        <themes:BundledTheme BaseTheme="Dark" PrimaryColor="Teal" SecondaryColor="Amber"/>
+    </Application.Resources>
+    <Application.Styles>
+        <StyleInclude Source="avares://Material.Avalonia/Material.Avalonia.Templates.xaml" />
+    </Application.Styles>
+</Application>

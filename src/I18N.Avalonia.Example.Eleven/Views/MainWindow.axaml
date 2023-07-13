@@ -1,0 +1,30 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:viewModels="clr-namespace:I18N.Avalonia.Prism.Example.Eleven.ViewModels"
+        xmlns:i18N="clr-namespace:I18N.Avalonia.Prism;assembly=I18N.Avalonia.Prism"
+        Title="{i18N:Localization Title}"
+        Height="350"
+        Width="525"
+        x:Class="I18N.Avalonia.Prism.Example.Eleven.Views.MainWindow"
+        x:CompileBindings="True"
+        x:DataType="viewModels:MainWindowViewModel">
+    <StackPanel>
+        <TextBlock Text="{i18N:Localization Welcome}"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Center"
+                   Margin="0, 24, 0,24"
+                   FontSize="17"
+                   FontWeight="Heavy" />
+
+        <Button Content="{i18N:Localization English}"
+                Margin="0,0,0,8"
+                Command="{Binding SwitchLanguage}"
+                CommandParameter="en"/>
+
+        <Button Content="{i18N:Localization German}"
+                Margin="0,0,0,8"
+                Command="{Binding SwitchLanguage}"
+                CommandParameter="de"/>
+
+    </StackPanel>
+</Window>

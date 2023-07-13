@@ -1,0 +1,26 @@
+<Project Sdk="Microsoft.NET.Sdk">
+	
+	<PropertyGroup>
+		<TargetFrameworks>netcoreapp3.1;net6.0;net7.0</TargetFrameworks>
+		<ImplicitUsings>enable</ImplicitUsings>
+	    <Nullable>enable</Nullable>
+		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+	    <LangVersion>10</LangVersion>
+		<Authors>Andreas Sekulski</Authors>
+		<Product>Avalonia-Prism I18N</Product>
+		<Description>Avalonia Prism Internationalization Module</Description>
+		<Copyright>© Andreas Sekulski</Copyright>
+	    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
+	    <Version>0.0.1</Version>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<None Include="../../README.md" Pack="true" PackagePath=""/>
+		<None Include="../../LICENSE" Pack="true" PackagePath=""/>
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Prism.DryIoc.Avalonia" Version="8.1.97" />
+	</ItemGroup>
+</Project>

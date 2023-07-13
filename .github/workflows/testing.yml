@@ -1,0 +1,25 @@
+name: dotnet package
+
+on: [push]
+
+jobs:
+  build:
+
+    strategy:
+      matrix:
+        platform: [ubuntu-latest, macos-latest, windows-latest]
+        # https://dotnetcli.blob.core.windows.net/dotnet/release-metadata/releases-index.json
+        dotnet-version: [ '7.0' ]
+    runs-on: ${{ matrix.platform }}
+    steps:
+      - uses: actions/checkout@v3
+      - name: Setup .NET Core SDK ${{ matrix.dotnet-version }}
+        uses: actions/setup-dotnet@v2
+        with:
+          dotnet-version: ${{ matrix.dotnet-version }}
+      - name: Install dependencies
+        run: dotnet restore
+      - name: Build
+        run: dotnet build --configuration Release --no-restore
+      - name: Test
+        run: dotnet test --no-restore --verbosity normal
