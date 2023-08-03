@@ -98,16 +98,12 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.3500.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Welcome" xml:space="preserve">
-    <value>Hello, Prism on Avalonia and I18N!</value>
-  </data>
-  <data name="Title" xml:space="preserve">
-    <value>I18N.Avalonia.Prism.Example.Eleven</value>
-    <comment>@Invariant</comment>
+    <value>Hallo, ReactiveUI auf Avalonia und I18N!</value>
   </data>
   <data name="German" xml:space="preserve">
-    <value>German</value>
+    <value>Deutsch</value>
   </data>
   <data name="English" xml:space="preserve">
-    <value>English</value>
+    <value>Englisch</value>
   </data>
 </root>

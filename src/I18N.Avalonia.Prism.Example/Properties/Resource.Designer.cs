@@ -79,7 +79,7 @@ namespace I18N.Avalonia.Prism.Example.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Avalonia.Prism.I18N.
+        ///   Looks up a localized string similar to I18N.Avalonia.Prism.Example.
         /// </summary>
         internal static string Title {
             get {
