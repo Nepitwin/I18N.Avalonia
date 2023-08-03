@@ -2,22 +2,20 @@ using Avalonia.Data;
 using Avalonia.Markup.Xaml;
 using Avalonia.Markup.Xaml.MarkupExtensions;
 using I18N.Avalonia.Interface;
-using Splat;
 
-namespace I18N.Avalonia.ReactiveUi;
+namespace I18N.Avalonia;
 
-public class LocalizationExtension: MarkupExtension
+public abstract class LocalizationExtension: MarkupExtension, ILocalizerContainer
 {
+    public abstract ILocalizer Localizer { get; }
+
     public string Key { get; set; }
 
     public string Context { get; set; } = string.Empty;
 
-    private readonly ILocalizer _locationSource;
-
-    public LocalizationExtension(string key)
+    protected LocalizationExtension(string key)
     {
         Key = key;
-        _locationSource = Locator.Current.GetService<ILocalizer>();
     }
     
     public override object ProvideValue(IServiceProvider serviceProvider)
@@ -32,7 +30,7 @@ public class LocalizationExtension: MarkupExtension
         var binding = new ReflectionBindingExtension($"[{keyToUse}]")
         {
             Mode = BindingMode.OneWay,
-            Source = _locationSource
+            Source = Localizer
         };
 
         return binding.ProvideValue(serviceProvider);

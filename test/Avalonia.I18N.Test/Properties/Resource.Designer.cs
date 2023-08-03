@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace I18N.Avalonia.Prism.Test.Properties {
+namespace I18N.Avalonia.Test.Properties {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace I18N.Avalonia.Prism.Test.Properties {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("I18N.Avalonia.Prism.Test.Properties.Resource", typeof(Resource).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("I18N.Avalonia.Test.Properties.Resource", typeof(Resource).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;

@@ -1,24 +1,24 @@
 <Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:reactiveUi="clr-namespace:I18N.Avalonia.ReactiveUi;assembly=I18N.Avalonia.ReactiveUi"
-        Title="{reactiveUi:Localization Title}"
+        xmlns:i18N="clr-namespace:I18N.Avalonia.ReactiveUi;assembly=I18N.Avalonia.ReactiveUi"
+        Title="{i18N:ReactiveUiLocalization Title}"
         Height="350"
         Width="525"
         x:Class="I18N.Avalonia.ReactiveUi.Eleven.Views.MainWindow">
     <StackPanel>
-        <TextBlock Text="{reactiveUi:Localization Welcome}"
+        <TextBlock Text="{i18N:ReactiveUiLocalization Welcome}"
                    HorizontalAlignment="Center"
                    VerticalAlignment="Center"
                    Margin="0, 24, 0,24"
                    FontSize="17"
                    FontWeight="Heavy" />
 
-        <Button Content="{reactiveUi:Localization English}"
+        <Button Content="{i18N:ReactiveUiLocalization English}"
                 Margin="0,0,0,8"
                 Command="{Binding SwitchLanguage}"
                 CommandParameter="en"/>
 
-        <Button Content="{reactiveUi:Localization German}"
+        <Button Content="{i18N:ReactiveUiLocalization German}"
                 Margin="0,0,0,8"
                 Command="{Binding SwitchLanguage}"
                 CommandParameter="de"/>

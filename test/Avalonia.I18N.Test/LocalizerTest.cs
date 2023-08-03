@@ -1,7 +1,7 @@
 ﻿using System.Globalization;
 using FluentAssertions;
 
-namespace I18N.Avalonia.Prism.Test;
+namespace I18N.Avalonia.Test;
 
 public class LocalizerTest
 {
