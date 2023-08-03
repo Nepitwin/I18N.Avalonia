@@ -20,7 +20,7 @@ public class LocalizationExtensionTest
     public void AvaloniaBindingCreationExpectsKeyBinding()
     {
         var mockServiceProvider = new Mock<IServiceProvider>();
-        var localizationSource = new LocalizationExtension("Key");
+        var localizationSource = new PrismLocalizationExtension("Key");
         localizationSource.Key.Should().Be("Key");
         var binding = localizationSource.ProvideValue(mockServiceProvider.Object);
 
@@ -35,7 +35,7 @@ public class LocalizationExtensionTest
     public void AvaloniaContextBindingCreationExpectsSubKeyBinding()
     {
         var mockServiceProvider = new Mock<IServiceProvider>();
-        var localizationSource = new LocalizationExtension("Key")
+        var localizationSource = new PrismLocalizationExtension("Key")
         {
             Context = "Context"
         };
