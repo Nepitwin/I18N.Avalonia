@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Globalization;
-using I18N.Avalonia.Prism.Interface;
+using I18N.Avalonia.Interface;
+using Material.Dialog;
 using Prism.Commands;
-using Prism.Mvvm;
 
-namespace I18N.Avalonia.Prism.Example.Eleven.ViewModels;
+namespace I18N.Avalonia.Prism.Example.ViewModels;
 
-public class MainWindowViewModel: BindableBase
+public class MainWindowViewModel: ViewModelBase
 {
     public DelegateCommand<string> SwitchLanguage { get; private set; }
 

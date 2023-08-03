@@ -1,11 +1,11 @@
 ﻿using Avalonia.Data;
-using Avalonia.Prism.I18N.Interface;
 using FluentAssertions;
+using I18N.Avalonia.Interface;
 using Moq;
 using Prism.DryIoc;
 using Prism.Ioc;
 
-namespace Avalonia.Prism.I18N.Test;
+namespace I18N.Avalonia.Prism.Test;
 
 public class LocalizationExtensionTest
 {

@@ -1,5 +1,6 @@
 ﻿using System;
 using Avalonia;
+using I18N.Avalonia.Prism.Example;
 
 namespace I18N.Prism.Example;
 

@@ -1,18 +1,18 @@
 <Project Sdk="Microsoft.NET.Sdk">
-	
+
 	<PropertyGroup>
 		<TargetFrameworks>netcoreapp3.1;net6.0;net7.0</TargetFrameworks>
 		<ImplicitUsings>enable</ImplicitUsings>
-	    <Nullable>enable</Nullable>
+		<Nullable>enable</Nullable>
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-	    <LangVersion>10</LangVersion>
+		<LangVersion>10</LangVersion>
 		<Authors>Andreas Sekulski</Authors>
-		<Product>Avalonia-Prism I18N</Product>
-		<Description>Avalonia Prism Internationalization Module</Description>
+		<Product>Avalonia-ReactiveUi I18N</Product>
+		<Description>Avalonia ReactiveUi Internationalization Module</Description>
 		<Copyright>© Andreas Sekulski</Copyright>
-	    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+		<PackageLicenseFile>LICENSE</PackageLicenseFile>
 		<PackageReadmeFile>README.md</PackageReadmeFile>
-	    <Version>0.0.1</Version>
+		<Version>0.0.1</Version>
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -21,10 +21,11 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Prism.DryIoc.Avalonia" Version="8.1.97" />
+		<PackageReference Include="Avalonia.ReactiveUI" Version="0.10.21" />
 	</ItemGroup>
 
 	<ItemGroup>
 	  <ProjectReference Include="..\I18N.Core\I18N.Avalonia.csproj" />
 	</ItemGroup>
+
 </Project>

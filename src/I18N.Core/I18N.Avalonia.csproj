@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<TargetFrameworks>netcoreapp3.1;net6.0;net7.0</TargetFrameworks>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+		<GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+		<LangVersion>10</LangVersion>
+		<Authors>Andreas Sekulski</Authors>
+		<Product>Avalonia-I18N-Core</Product>
+		<Description>Avalonia Internationalization Core</Description>
+		<Copyright>© Andreas Sekulski</Copyright>
+		<PackageLicenseFile>LICENSE</PackageLicenseFile>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
+		<IsPublishable>false</IsPublishable>
+	</PropertyGroup>
+</Project>

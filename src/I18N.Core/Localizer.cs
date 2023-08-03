@@ -1,9 +1,9 @@
 using System.ComponentModel;
 using System.Globalization;
 using System.Resources;
-using I18N.Avalonia.Prism.Interface;
+using I18N.Avalonia.Interface;
 
-namespace I18N.Avalonia.Prism;
+namespace I18N.Avalonia;
 
 public class Localizer : ILocalizer, INotifyPropertyChanged
 {

@@ -1,7 +1,7 @@
 using Avalonia;
 using Avalonia.Markup.Xaml;
+using I18N.Avalonia.Interface;
 using I18N.Avalonia.Prism.Example.Eleven.Views;
-using I18N.Avalonia.Prism.Interface;
 using Prism.DryIoc;
 using Prism.Ioc;
 

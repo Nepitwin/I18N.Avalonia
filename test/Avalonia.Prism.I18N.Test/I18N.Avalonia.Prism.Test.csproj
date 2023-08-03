@@ -27,6 +27,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\src\I18N.Avalonia.Prism\I18N.Avalonia.Prism.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
 	<Compile Update="Properties\Resource.Designer.cs">
 		<DependentUpon>Resource.resx</DependentUpon>
 		<DesignTime>True</DesignTime>
