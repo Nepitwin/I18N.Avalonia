@@ -1,12 +1,18 @@
-﻿using System.Globalization;
+﻿using System.ComponentModel;
+using System.Globalization;
 using I18N.Avalonia.Interface;
 
 namespace I18N.Avalonia;
 
-public class Visualizer: ILocalizer
+public class Visualizer: ILocalizer, INotifyPropertyChanged
 {
-    public event Action? LanguageChangedNotification;
+        private const string IndexerName = "Item";
+    private const string IndexerArrayName = "Item[]";
+
     private CultureInfo _language = new("en");
+
+    public event Action? LanguageChangedNotification;
+    public event PropertyChangedEventHandler? PropertyChanged;
     
     public string this[string key] => GetValueFromCulture(key, _language);
 
@@ -21,6 +27,9 @@ public class Visualizer: ILocalizer
             }
 
             _language = value;
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(IndexerName));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(IndexerArrayName));
+            LanguageChangedNotification?.Invoke();
         }
     }
 
