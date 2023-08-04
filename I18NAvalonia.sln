@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "I18N.Avalonia.Prism", "src\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "I18N.Avalonia.ReactiveUi", "src\I18N.Avalonia.ReactiveUi\I18N.Avalonia.ReactiveUi.csproj", "{F0FDBEBB-2F50-42F5-9E01-5505518FA369}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "I18N.Avalonia.Prism.Example", "src\I18N.Avalonia.Prism.Example\I18N.Avalonia.Prism.Example.csproj", "{EABE3FAD-0AA4-47AA-8D17-1CBF4286BC77}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "I18N.Avalonia.Prism.Example.Zero", "src\I18N.Avalonia.Prism.Example\I18N.Avalonia.Prism.Example.Zero.csproj", "{EABE3FAD-0AA4-47AA-8D17-1CBF4286BC77}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "I18N.Avalonia.Prism.Example.Eleven", "src\I18N.Avalonia.Prism.Example.Eleven\I18N.Avalonia.Prism.Example.Eleven.csproj", "{915B7A72-07EA-4700-B56D-6AF2FFA6E54D}"
 EndProject

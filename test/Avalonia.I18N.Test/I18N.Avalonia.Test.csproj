@@ -46,4 +46,8 @@
 	</EmbeddedResource>
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Helper\Interface\" />
+  </ItemGroup>
+
 </Project>

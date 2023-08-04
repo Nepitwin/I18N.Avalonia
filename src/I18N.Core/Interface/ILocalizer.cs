@@ -4,7 +4,6 @@ namespace I18N.Avalonia.Interface;
 
 public interface ILocalizer
 {
-    public CultureInfo DefaultLanguage { get; }
     public CultureInfo Language { get; set; }
     public string GetValueFromCulture(string key, CultureInfo culture);
     public string GetValueFromCulture(string key);

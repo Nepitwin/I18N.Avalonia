@@ -1,11 +1,11 @@
 <Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:viewModels="clr-namespace:I18N.Avalonia.Prism.Example.ViewModels"
         xmlns:i18N="clr-namespace:I18N.Avalonia.Prism;assembly=I18N.Avalonia.Prism"
+        xmlns:viewModels="clr-namespace:I18N.Avalonia.Prism.Example.Zero.ViewModels"
         Title="{i18N:PrismLocalizationExtension Title}"
         Height="350"
         Width="525"
-        x:Class="I18N.Avalonia.Prism.Example.Views.MainWindow"
+        x:Class="I18N.Avalonia.Prism.Example.Zero.Views.MainWindow"
         x:CompileBindings="True" 
         x:DataType="viewModels:MainWindowViewModel">
     <StackPanel>

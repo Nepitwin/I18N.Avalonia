@@ -1,59 +1,80 @@
-﻿using Avalonia.Data;
+﻿using System.Collections;
+using Avalonia.Data;
 using FluentAssertions;
-using I18N.Avalonia.Interface;
 using I18N.Avalonia.Prism;
+using I18N.Avalonia.ReactiveUi;
+using I18N.Avalonia.Test.Helper;
+using I18N.Avalonia.Test.Helper.Interface;
 using Moq;
-using Prism.DryIoc;
-using Prism.Ioc;
-
 namespace I18N.Avalonia.Test;
 
 public class LocalizationExtensionTest
 {
-    public LocalizationExtensionTest()
+    public class TestLocationSourceGenerator : IEnumerable<object[]>
     {
-        ContainerLocator.SetContainerExtension((Func<DryIocContainerExtension>?)CreateContainerExtension);
-        ContainerLocator.Current.RegisterSingleton<ILocalizer, Localizer>();
-    }
-
-    [Fact]
-    public void AvaloniaBindingCreationExpectsKeyBinding()
-    {
-        var mockServiceProvider = new Mock<IServiceProvider>();
-        var localizationSource = new PrismLocalizationExtension("Key");
-        localizationSource.Key.Should().Be("Key");
-        var binding = localizationSource.ProvideValue(mockServiceProvider.Object);
-
-        binding.Should().BeOfType(typeof(Binding));
-
-        var avaloniaBinding = (Binding)binding;
-        avaloniaBinding.Path.Should().Be("[Key]");
-        avaloniaBinding.Source.Should().BeOfType(typeof(Localizer));
-    }
-
-    [Fact]
-    public void AvaloniaContextBindingCreationExpectsSubKeyBinding()
-    {
-        var mockServiceProvider = new Mock<IServiceProvider>();
-        var localizationSource = new PrismLocalizationExtension("Key")
+        private readonly List<object[]> _data = new()
         {
-            Context = "Context"
+            new object[] { new PrismLocalizationExtension("Key"), new PrismContainer(), typeof(Localizer) },
+            new object[] { new ReactiveUiLocalizationExtension("Key"), new SplatContainer(), typeof(Localizer) },
+            new object[] { new PrismLocalizationExtension("Key"), new EmptyContainer(), typeof(Visualizer) },
+            new object[] { new ReactiveUiLocalizationExtension("Key"), new EmptyContainer(), typeof(Visualizer) },
         };
 
-        localizationSource.Key.Should().Be("Key");
-        localizationSource.Context.Should().Be("Context");
+        public IEnumerator<object[]> GetEnumerator() => _data.GetEnumerator();
 
-        var binding = localizationSource.ProvideValue(mockServiceProvider.Object);
-
-        binding.Should().BeOfType(typeof(Binding));
-
-        var avaloniaBinding = (Binding)binding;
-        avaloniaBinding.Path.Should().Be("[Context/Key]");
-        avaloniaBinding.Source.Should().BeOfType(typeof(Localizer));
+        IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
     }
 
-    private static DryIocContainerExtension CreateContainerExtension()
+    [Theory]
+    [ClassData(typeof(TestLocationSourceGenerator))]
+    public void AvaloniaBindingCreationExpectsBinding(LocalizationExtension localizationSource, IContainerHelper containerHelper, Type expectedType)
     {
-        return new DryIocContainerExtension();
+        try
+        {
+            containerHelper.Init();
+
+            var mockServiceProvider = new Mock<IServiceProvider>();
+
+            localizationSource.Key.Should().Be("Key");
+            var binding = localizationSource.ProvideValue(mockServiceProvider.Object);
+
+            binding.Should().BeOfType(typeof(Binding));
+
+            var avaloniaBinding = (Binding)binding;
+            avaloniaBinding.Path.Should().Be("[Key]");
+            avaloniaBinding.Source.Should().BeOfType(expectedType);
+        }
+        finally
+        {
+            containerHelper.Destroy();
+        }
+    }
+
+    [Theory]
+    [ClassData(typeof(TestLocationSourceGenerator))]
+    public void AvaloniaContextBindingCreationExpectsSubKeyBinding(LocalizationExtension localizationSource, IContainerHelper containerHelper, Type expectedType)
+    {
+        try
+        {
+            containerHelper.Init();
+
+            var mockServiceProvider = new Mock<IServiceProvider>();
+            localizationSource.Context = "Context";
+
+            localizationSource.Key.Should().Be("Key");
+            localizationSource.Context.Should().Be("Context");
+
+            var binding = localizationSource.ProvideValue(mockServiceProvider.Object);
+
+            binding.Should().BeOfType(typeof(Binding));
+
+            var avaloniaBinding = (Binding)binding;
+            avaloniaBinding.Path.Should().Be("[Context/Key]");
+            avaloniaBinding.Source.Should().BeOfType(expectedType);
+        }
+        finally
+        {
+            containerHelper.Destroy();
+        }
     }
 }

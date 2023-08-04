@@ -4,7 +4,7 @@ using I18N.Avalonia.Interface;
 using Material.Dialog;
 using Prism.Commands;
 
-namespace I18N.Avalonia.Prism.Example.ViewModels;
+namespace I18N.Avalonia.Prism.Example.Zero.ViewModels;
 
 public class MainWindowViewModel: ViewModelBase
 {

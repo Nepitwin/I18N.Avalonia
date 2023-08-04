@@ -14,13 +14,10 @@ public class Localizer : ILocalizer, INotifyPropertyChanged
     public event PropertyChangedEventHandler? PropertyChanged;
 
     private readonly ResourceManager _resManager;
-    private CultureInfo _language;
-
-    public CultureInfo DefaultLanguage { get; } = new("en");
+    private CultureInfo _language = new("en");
 
     public Localizer(ResourceManager resManager)
     {
-        _language = DefaultLanguage;
         _resManager = resManager;
     }
 
@@ -50,6 +47,6 @@ public class Localizer : ILocalizer, INotifyPropertyChanged
 
     public string GetValueFromCulture(string key, CultureInfo culture)
     {
-        return _resManager.GetString(key, culture) ?? string.Empty;
+        return _resManager.GetString(key, culture) ?? $"<{key}>";
     }
 }

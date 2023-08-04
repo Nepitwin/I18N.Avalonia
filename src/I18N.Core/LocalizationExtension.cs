@@ -7,7 +7,7 @@ namespace I18N.Avalonia;
 
 public abstract class LocalizationExtension: MarkupExtension, ILocalizerContainer
 {
-    public abstract ILocalizer Localizer { get; }
+    public abstract ILocalizer GetLocalizerOrDefault();
 
     public string Key { get; set; }
 
@@ -30,7 +30,7 @@ public abstract class LocalizationExtension: MarkupExtension, ILocalizerContaine
         var binding = new ReflectionBindingExtension($"[{keyToUse}]")
         {
             Mode = BindingMode.OneWay,
-            Source = Localizer
+            Source = GetLocalizerOrDefault()
         };
 
         return binding.ProvideValue(serviceProvider);

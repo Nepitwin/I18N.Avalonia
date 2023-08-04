@@ -79,7 +79,7 @@ namespace I18N.Avalonia.ReactiveUi.Zero.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to I18N.Avalonia.ReactiveUi.Eleven.
+        ///   Looks up a localized string similar to I18N.Avalonia.ReactiveUi.Zero.
         /// </summary>
         internal static string Title {
             get {

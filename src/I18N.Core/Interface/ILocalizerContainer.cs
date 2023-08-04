@@ -2,5 +2,5 @@
 
 public interface ILocalizerContainer
 {
-    public ILocalizer Localizer { get; }
+    public ILocalizer GetLocalizerOrDefault();
 }

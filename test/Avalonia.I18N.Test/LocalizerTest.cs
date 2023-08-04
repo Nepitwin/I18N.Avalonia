@@ -33,11 +33,11 @@ public class LocalizerTest
     }
 
     [Fact]
-    public void UnknownLocalizationShouldReturnEmptyString()
+    public void UnknownLocalizationShouldReturnKeyValueString()
     {
         var localizer = new Localizer(Properties.Resource.ResourceManager);
-        localizer["NOT_EXISTING"].Should().BeEmpty();
-        localizer.GetValueFromCulture("NOT_EXISTING", localizer.Language).Should().BeEmpty();
+        localizer["NOT_EXISTING"].Should().Be("<NOT_EXISTING>");
+        localizer.GetValueFromCulture("NOT_EXISTING", localizer.Language).Should().Be("<NOT_EXISTING>");
     }
 
     [Fact]
