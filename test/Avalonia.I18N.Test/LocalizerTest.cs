@@ -1,74 +1,92 @@
-﻿using System.Globalization;
+﻿using System.Collections;
+using System.Globalization;
 using FluentAssertions;
+using I18N.Avalonia.Interface;
 
 namespace I18N.Avalonia.Test;
 
 public class LocalizerTest
 {
-    [Fact]
-    public void GetValueFromCultureShouldReturnEnglishTranslation()
+    public class TestLocalizerGenerator : IEnumerable<object[]>
     {
-        var localizationSource = new Localizer(Properties.Resource.ResourceManager);
-        localizationSource["Lang_en"].Should().Be("EN_ENG");
-        localizationSource.GetValueFromCulture("Lang_en").Should().Be("EN_ENG");
-    }
-    
-    [Fact]
-    public void GetValueFromCultureShouldReturnGermanTranslation()
-    {
-        var localizationSource = new Localizer(Properties.Resource.ResourceManager)
+        private readonly List<object[]> _data = new()
         {
-            Language = new CultureInfo("de")
+            new object[] { typeof(Localizer)},
+            new object[] { typeof(Visualizer)},
         };
-        localizationSource["Lang_de"].Should().Be("DE_GER");
-        localizationSource.GetValueFromCulture("Lang_de").Should().Be("DE_GER");
-    }
-    
-    [Fact]
-    public void DirectLocalizationUsageShouldBeEqualToGetValueFromCulture()
-    {
-        var localizer = new Localizer(Properties.Resource.ResourceManager);
-        localizer["Lang_en"].Should().Be("EN_ENG");
-        localizer.GetValueFromCulture("Lang_en", localizer.Language).Should().Be("EN_ENG");
+
+        public IEnumerator<object[]> GetEnumerator() => _data.GetEnumerator();
+
+        IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
     }
 
-    [Fact]
-    public void UnknownLocalizationShouldReturnKeyValueString()
+    public class TestLocalizerTranslatorGenerator : IEnumerable<object[]>
     {
-        var localizer = new Localizer(Properties.Resource.ResourceManager);
-        localizer["NOT_EXISTING"].Should().Be("<NOT_EXISTING>");
-        localizer.GetValueFromCulture("NOT_EXISTING", localizer.Language).Should().Be("<NOT_EXISTING>");
+        private readonly List<object[]> _data = new()
+        {
+            // English language
+            new object[] { new Localizer(Properties.Resource.ResourceManager), new CultureInfo("en"), "Lang_en", "EN_ENG" },
+            new object[] { new Visualizer(), new CultureInfo("en"), "Lang_en", "<Lang_en>" },
+            // Language switch test
+            new object[] { new Localizer(Properties.Resource.ResourceManager), new CultureInfo("de"), "Lang_de", "DE_GER" },
+            new object[] { new Visualizer(), new CultureInfo("de"), "Lang_de", "<Lang_de>" },
+            // Translation not existing test
+            new object[] { new Localizer(Properties.Resource.ResourceManager), new CultureInfo("en"), "NOT_EXISTING", "<NOT_EXISTING>" },
+            new object[] { new Visualizer(), new CultureInfo("en"), "NOT_EXISTING", "<NOT_EXISTING>" },
+            // Neutral language test
+            new object[] { new Localizer(Properties.Resource.ResourceManager), new CultureInfo("bg"), "Lang_en", "EN_ENG" },
+            new object[] { new Visualizer(), new CultureInfo("bg"), "Lang_en", "<Lang_en>" },
+        };
+
+        public IEnumerator<object[]> GetEnumerator() => _data.GetEnumerator();
+
+        IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
     }
 
-    [Fact]
-    public void OnPropertyChangedIsCalledIfCultureIsChanged()
+    [Theory]
+    [ClassData(typeof(TestLocalizerTranslatorGenerator))]
+    public void GetValueFromCultureShouldReturnTranslation(ILocalizer localizer, CultureInfo culture, string key, string expectedTranslation)
     {
-        var localizer = new Localizer(Properties.Resource.ResourceManager);
+        localizer.Language = culture;
+        localizer[key].Should().Be(expectedTranslation);
+        localizer.GetValueFromCulture(key).Should().Be(expectedTranslation);
+        localizer.GetValueFromCulture(key, culture).Should().Be(expectedTranslation);
+    }
+
+    [Theory]
+    [ClassData(typeof(TestLocalizerGenerator))]
+    public void EventsCalledIfLanguageIsChanged(Type typeLocalizer)
+    {
+        var localizer = CreateLocalizer(typeLocalizer);
         var events = localizer.Monitor();
         localizer.Language = new CultureInfo("kgb");
         events.Should().Raise("PropertyChanged");
-    }
-
-    [Fact]
-    public void LocalizationChangedNotificationIsCalledIfCultureIsChanged()
-    {
-        var localizer = new Localizer(Properties.Resource.ResourceManager);
-        var events = localizer.Monitor();
-        localizer.Language = new CultureInfo("kgb");
         events.Should().Raise("LanguageChangedNotification");
     }
 
-    [Fact]
-    public void NoNotificationsByEqualLanguageIsChanged()
+    [Theory]
+    [ClassData(typeof(TestLocalizerGenerator))]
+    public void EventsNotCalledByEqualLanguage(Type typeLocalizer)
     {
-        var localizer = new Localizer(Properties.Resource.ResourceManager)
-        {
-            Language = new CultureInfo("en")
-        };
+        var localizer = CreateLocalizer(typeLocalizer);
         var events = localizer.Monitor();
         localizer.Language = new CultureInfo("en");
-
         events.Should().NotRaise("PropertyChanged");
         events.Should().NotRaise("LanguageChangedNotification");
+    }
+
+    public ILocalizer CreateLocalizer(Type type)
+    {
+        if (type == typeof(Localizer))
+        {
+            return new Localizer(Properties.Resource.ResourceManager);
+        }
+
+        if (type == typeof(Visualizer))
+        {
+            return new Visualizer();
+        }
+
+        throw new NotSupportedException();
     }
 }

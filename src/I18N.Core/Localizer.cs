@@ -5,7 +5,7 @@ using I18N.Avalonia.Interface;
 
 namespace I18N.Avalonia;
 
-public class Localizer : ILocalizer, INotifyPropertyChanged
+public class Localizer : ILocalizer
 {
     private const string IndexerName = "Item";
     private const string IndexerArrayName = "Item[]";
