@@ -15,4 +15,14 @@
 |---                       |------------------------------------------------------------------------------|
 | License                  | ![][license]                                                                 |
 | Builds                   | ![][LinuxBuild] ![][MacOSBuild] ![][WindowsBuild]                            |
-| ![][NetCore]             | ![][3] ![][6] ![][7]                                                         |
+| .NET Core                | ![][3] ![][6] ![][7]                                                         |
+
+# How to use it
+
+ToDo
+
+# Acknowledgment
+
+Thanks to Sakya which has written this nice blog to understand this behavior and to build a nuget package with some changes.
+
+-   <https://www.sakya.it/wordpress/avalonia-ui-framework-localization>
