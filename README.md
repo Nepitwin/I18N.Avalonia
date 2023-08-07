@@ -8,6 +8,7 @@
 
 [NetCore]: https://img.shields.io/badge/NetCore-blue
 [3]: https://img.shields.io/badge/3-Supported-blue
+[5]: https://img.shields.io/badge/5-Supported-blue
 [6]: https://img.shields.io/badge/6-Supported-blue
 [7]: https://img.shields.io/badge/7-Supported-blue
 
@@ -15,7 +16,12 @@
 |---                       |------------------------------------------------------------------------------|
 | License                  | ![][license]                                                                 |
 | Builds                   | ![][LinuxBuild] ![][MacOSBuild] ![][WindowsBuild]                            |
-| .NET Core                | ![][3] ![][6] ![][7]                                                         |
+| .NET Core                | ![][3] ![][5] ![][6] ![][7]                                                         |
+
+
+| Prism                    | ReactiveUi                                                                              |
+|---                       |------------------------------------------------------------------------------|
+| <img src="./videos/Prism.gif" width="300" />                  | <img src="./videos/ReactiveUi.gif" width="300" />  |
 
 # How to use it
 
