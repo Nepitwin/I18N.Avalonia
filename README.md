@@ -21,11 +21,95 @@
 
 | Prism                    | ReactiveUi                                                                              |
 |---                       |------------------------------------------------------------------------------|
-| <img src="./videos/Prism.gif" width="300" />                  | <img src="./videos/ReactiveUi.gif" width="300" />  |
+| <img src="./assets/Prism.gif" width="300" />                  | <img src="./assets/ReactiveUi.gif" width="300" />  |
 
 # How to use it
 
-ToDo
+## Ressource manager files (.resx)
+
+* Recommended tool to manage resx files is ResXResourceManager
+  *  https://github.com/dotnet/ResXResourceManager
+
+### Prism registration
+
+```dotnet
+    protected override void RegisterTypes(IContainerRegistry containerRegistry)
+    {
+        containerRegistry.RegisterInstance<ILocalizer>(new Localizer(Properties.Resource.ResourceManager));
+    }
+```
+
+Include prism internationalizing module by .axaml
+
+```
+    xmlns:i18N="clr-namespace:I18N.Avalonia.Prism;assembly=I18N.Avalonia.Prism"
+```
+
+### ReactiveUi registration (Splat)
+
+```dotnet
+    public override void RegisterServices()
+    {
+        base.RegisterServices();
+        Locator.CurrentMutable.RegisterLazySingleton(() => new Localizer(Properties.Resource.ResourceManager), typeof(ILocalizer));
+    }
+```
+
+Include reactive internatinalizing module by .axaml
+
+```
+    xmlns:i18N="clr-namespace:I18N.Avalonia.ReactiveUi;assembly=I18N.Avalonia.ReactiveUi"
+```
+
+### Usage in .axaml
+
+```
+    <StackPanel>
+        <TextBlock Text="{i18N:PrismLocalizationExtension Welcome}"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Center"
+                   Margin="0, 24, 0,24"
+                   FontSize="17"
+                   FontWeight="Heavy" />
+
+        <Button Content="{i18N:PrismLocalizationExtension English}"
+                Margin="0,0,0,8"
+                Command="{Binding SwitchLanguage}"
+                CommandParameter="en"/>
+
+        <Button Content="{i18N:PrismLocalizationExtension German}"
+                Margin="0,0,0,8"
+                Command="{Binding SwitchLanguage}"
+                CommandParameter="de"/>
+
+    </StackPanel>
+```
+
+### Usage in model view
+
+```
+    public LanguageViewModel(ILocalizer i18N)
+    {
+        i18N.LanguageChangedNotification += OnLanguageChangedNotification;
+    }
+
+    private void OnLanguageChangedNotification()
+    {
+        Console.WriteLine(@"Change language to" + _localizer.Language.TwoLetterISOLanguageName);
+        // Your binding can be changed here or notify property changed can be called to refresh
+    }
+```
+
+### Language change
+
+* After language is set all binding properties will be automatic refreshed and LanguageChangedNotification is called to refresh bindings.
+
+```
+    public LanguageViewModel(ILocalizer i18N)
+    {
+        i18N.Language = new CultureInfo("de");
+    }
+```
 
 # Acknowledgment
 
