@@ -12,6 +12,8 @@
 		<PackageLicenseFile>LICENSE</PackageLicenseFile>
 		<PackageReadmeFile>README.md</PackageReadmeFile>
 		<IsPublishable>false</IsPublishable>
+		<RepositoryUrl>https://github.com/Nepitwin/I18N.Avalonia</RepositoryUrl>
+		<RepositoryType>git</RepositoryType>
 	</PropertyGroup>
 
 	<ItemGroup>
