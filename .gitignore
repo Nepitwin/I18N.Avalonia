@@ -4,3 +4,4 @@ obj
 *.user
 .idea
 index.xml
+test/Avalonia.I18N.Test/TestResults
