@@ -3,7 +3,7 @@ name: Macos
 on: [push]
 
 jobs:           
-    macos:
+    macos-latest:
         runs-on: macos-latest
         permissions:
           id-token: write

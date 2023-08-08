@@ -28,6 +28,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Build", "Build", "{FD8F8F26
 		build\Base.props = build\Base.props
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Workflow", "Workflow", "{E5000079-FEA8-4D2E-B5C1-82D81569FC1A}"
+	ProjectSection(SolutionItems) = preProject
+		.github\workflows\linux.yml = .github\workflows\linux.yml
+		.github\workflows\macos.yml = .github\workflows\macos.yml
+		.github\workflows\windows.yml = .github\workflows\windows.yml
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
