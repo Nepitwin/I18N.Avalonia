@@ -7,16 +7,22 @@
 [WindowsBuild]: https://github.com/Nepitwin/I18N.Avalonia/actions/workflows/windows.yml/badge.svg
 
 [NetCore]: https://img.shields.io/badge/NetCore-blue
-[3]: https://img.shields.io/badge/3-Supported-blue
-[5]: https://img.shields.io/badge/5-Supported-blue
-[6]: https://img.shields.io/badge/6-Supported-blue
-[7]: https://img.shields.io/badge/7-Supported-blue
+[3]: https://img.shields.io/badge/3-Support-blue
+[5]: https://img.shields.io/badge/5-Support-blue
+[6]: https://img.shields.io/badge/6-Support-blue
+[7]: https://img.shields.io/badge/7-Support-blue
+
+[Ava-0X]: https://img.shields.io/badge/0.21-Support-green
+[Ava-11]: https://img.shields.io/badge/11-Support-green
 
 |                          |                                                                              |
 |---                       |------------------------------------------------------------------------------|
 | License                  | ![][license]                                                                 |
 | Builds                   | ![][LinuxBuild] ![][MacOSBuild] ![][WindowsBuild]                            |
-| .NET Core                | ![][3] ![][5] ![][6] ![][7]                                                         |
+| .NET Core                | ![][3] ![][5] ![][6] ![][7]                                                  |
+| Avalonia                 | ![][Ava-0X] ![][Ava-11]
+| Nuget Prism              | ToDo                                                                         |
+| Nuget Reactive           | ToDo                                                                         |
 
 
 | Prism                    | ReactiveUi                                                                              |
