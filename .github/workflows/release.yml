@@ -1,0 +1,114 @@
+name: Release
+
+on:
+    release:
+      types: [published]
+
+jobs:
+    macos:
+        runs-on: macos-latest
+        permissions:
+            id-token: write
+            contents: read
+            checks: write
+        steps:
+            - uses: actions/checkout@v3
+            - name: Setup .NET Core SDK 3
+              uses: actions/setup-dotnet@v2
+              with:	
+                dotnet-version: 3.1.x
+            - name: Setup .NET Core SDK 6
+              uses: actions/setup-dotnet@v2
+              with:	
+                dotnet-version: 6.0.x
+            - name: Setup .NET Core SDK 7
+              uses: actions/setup-dotnet@v2
+              with:	
+                dotnet-version: 7.0.x            
+            - name: Install dependencies
+              run: dotnet restore
+            - name: Build
+              run: dotnet build --configuration Release --no-restore
+            - name: Test
+              run: dotnet test --configuration Release --logger:"trx" --no-restore
+            - name: Test Report
+              if: success() || failure()
+              uses: dorny/test-reporter@v1
+              with:
+                name: Xunit Tests
+                path: "test/Avalonia.I18N.Test/TestResults/*.trx"                            
+                reporter: dotnet-trx
+                fail-on-error: true                
+
+    windows:
+        runs-on: windows-latest
+        permissions:
+            id-token: write
+            contents: read
+            checks: write
+        steps:
+            - uses: actions/checkout@v3
+            - name: Setup .NET Core SDK 3
+              uses: actions/setup-dotnet@v2
+              with:	
+                dotnet-version: 3.1.x
+            - name: Setup .NET Core SDK 6
+              uses: actions/setup-dotnet@v2
+              with:	
+                dotnet-version: 6.0.x
+            - name: Setup .NET Core SDK 7
+              uses: actions/setup-dotnet@v2
+              with:	
+                dotnet-version: 7.0.x            
+            - name: Install dependencies
+              run: dotnet restore
+            - name: Build
+              run: dotnet build --configuration Release --no-restore
+            - name: Test
+              run: dotnet test --configuration Release --logger:"trx" --no-restore
+            - name: Test Report
+              if: success() || failure()
+              uses: dorny/test-reporter@v1
+              with:
+                name: Xunit Tests
+                path: "test/Avalonia.I18N.Test/TestResults/*.trx"                            
+                reporter: dotnet-trx
+                fail-on-error: true
+
+    ubuntu:
+        runs-on: ubuntu-latest
+        needs: [macos, windows]
+        permissions:
+          id-token: write
+          contents: read
+          checks: write
+        steps:
+          - uses: actions/checkout@v3
+          - name: Setup .NET Core SDK 3
+            uses: actions/setup-dotnet@v2
+            with:	
+                dotnet-version: 3.1.x
+          - name: Setup .NET Core SDK 6
+            uses: actions/setup-dotnet@v2
+            with:	
+                dotnet-version: 6.0.x
+          - name: Setup .NET Core SDK 7
+            uses: actions/setup-dotnet@v2
+            with:	
+                dotnet-version: 7.0.x            
+          - name: Install dependencies
+            run: dotnet restore
+          - name: Build
+            run: dotnet build --configuration Release --no-restore
+          - name: Test
+            run: dotnet test --configuration Release --logger:"trx" --no-restore
+          - name: Test Report
+            if: success() || failure()
+            uses: dorny/test-reporter@v1
+            with:
+                name: Xunit Tests
+                path: "test/Avalonia.I18N.Test/TestResults/*.trx"                            
+                reporter: dotnet-trx
+                fail-on-error: true
+          - name: Push to NuGet
+            run: dotnet nuget push "./src/**/bin/Release/*.nupkg" --api-key ${{secrets.nuget_api_key}} --source https://api.nuget.org/v3/index.json
