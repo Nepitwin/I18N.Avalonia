@@ -15,14 +15,18 @@
 [Ava-0X]: https://img.shields.io/badge/0.21-Support-green
 [Ava-11]: https://img.shields.io/badge/11-Support-green
 
+[Nuget-Prism]: https://img.shields.io/nuget/v/I18N.Avalonia.Prism.svg
+[Nuget-Reactive]: https://img.shields.io/nuget/v/I18N.Avalonia.ReactiveUi.svg
+
+
 |                |                                                   |
 |----------------|---------------------------------------------------|
 | License        | ![][license]                                      |
 | Builds         | ![][LinuxBuild] ![][MacOSBuild] ![][WindowsBuild] |
 | .NET Core      | ![][3] ![][5] ![][6] ![][7]                       |
 | Avalonia       | ![][Ava-0X] ![][Ava-11]                           |
-| Nuget Prism    | ToDo                                              |
-| Nuget Reactive | ToDo                                              |
+| Nuget Prism    | [![NuGet][Nuget-Prism]](https://www.nuget.org/packages/I18N.Avalonia.Prism)                                 |
+| Nuget Reactive | [![NuGet][Nuget-Reactive]](https://www.nuget.org/packages/I18N.Avalonia.ReactiveUi)                               |
 
 | Prism                                        | ReactiveUi                                        |
 |----------------------------------------------|---------------------------------------------------|
