@@ -1,11 +1,11 @@
 using Avalonia;
 using Avalonia.Markup.Xaml;
 using I18N.Avalonia.Interface;
-using I18N.Avalonia.Prism.Example.Eleven.Views;
+using I18N.Avalonia.Prism.Eleven.Views;
 using Prism.DryIoc;
 using Prism.Ioc;
 
-namespace I18N.Avalonia.Prism.Example.Eleven;
+namespace I18N.Avalonia.Prism.Eleven;
 
 public partial class App : PrismApplication
 {

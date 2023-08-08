@@ -4,7 +4,7 @@ using I18N.Avalonia.Interface;
 using Prism.Commands;
 using Prism.Mvvm;
 
-namespace I18N.Avalonia.Prism.Example.Eleven.ViewModels;
+namespace I18N.Avalonia.Prism.Eleven.ViewModels;
 
 public class MainWindowViewModel: BindableBase
 {

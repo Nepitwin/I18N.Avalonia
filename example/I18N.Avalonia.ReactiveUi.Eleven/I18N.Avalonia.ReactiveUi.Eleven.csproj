@@ -24,7 +24,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\I18N.Avalonia.ReactiveUi\I18N.Avalonia.ReactiveUi.csproj" />
+    <ProjectReference Include="..\..\src\I18N.Avalonia.ReactiveUi\I18N.Avalonia.ReactiveUi.csproj" />
   </ItemGroup>
 
   <ItemGroup>

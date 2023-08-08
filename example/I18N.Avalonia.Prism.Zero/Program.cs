@@ -1,7 +1,7 @@
 ﻿using System;
 using Avalonia;
 
-namespace I18N.Avalonia.Prism.Example.Eleven;
+namespace I18N.Avalonia.Prism.Zero;
 
 internal class Program
 {

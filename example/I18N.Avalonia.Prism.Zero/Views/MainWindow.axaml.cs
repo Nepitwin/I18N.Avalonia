@@ -1,7 +1,7 @@
 using Avalonia;
 using Avalonia.Controls;
 
-namespace I18N.Avalonia.Prism.Example.Zero.Views;
+namespace I18N.Avalonia.Prism.Zero.Views;
 
 public partial class MainWindow : Window
 {

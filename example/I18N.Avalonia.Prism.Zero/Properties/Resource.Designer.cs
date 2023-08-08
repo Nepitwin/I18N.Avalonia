@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace I18N.Avalonia.Prism.Example.Eleven.Properties {
+namespace I18N.Avalonia.Prism.Zero.Properties {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace I18N.Avalonia.Prism.Example.Eleven.Properties {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("I18N.Avalonia.Prism.Example.Eleven.Properties.Resource", typeof(Resource).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("I18N.Avalonia.Prism.Zero.Properties.Resource", typeof(Resource).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -79,7 +79,7 @@ namespace I18N.Avalonia.Prism.Example.Eleven.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to I18N.Avalonia.Prism.Example.Eleven.
+        ///   Looks up a localized string similar to I18N.Avalonia.Prism.Zero.
         /// </summary>
         internal static string Title {
             get {

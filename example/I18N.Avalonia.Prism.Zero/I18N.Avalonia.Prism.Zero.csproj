@@ -41,6 +41,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\I18N.Avalonia.Prism\I18N.Avalonia.Prism.csproj" />
-  </ItemGroup>
+    <ProjectReference Include="..\..\src\I18N.Avalonia.Prism\I18N.Avalonia.Prism.csproj" />
+  </ItemGroup> 
+        
 </Project>
