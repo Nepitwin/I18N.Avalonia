@@ -23,6 +23,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "I18N.Avalonia.ReactiveUi.El
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "I18N.Avalonia.ReactiveUi.Zero", "example\I18N.Avalonia.ReactiveUi.Zero\I18N.Avalonia.ReactiveUi.Zero.csproj", "{5E64D2AB-A576-4972-B62F-F32AE7F1423D}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Build", "Build", "{FD8F8F26-834D-4097-8E6A-9D3B69BFB114}"
+	ProjectSection(SolutionItems) = preProject
+		build\Base.props = build\Base.props
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

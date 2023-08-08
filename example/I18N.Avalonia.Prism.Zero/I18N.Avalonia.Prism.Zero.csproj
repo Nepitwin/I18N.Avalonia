@@ -1,47 +1,47 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-  <PropertyGroup>
-    <OutputType>WinExe</OutputType>
-    <TargetFramework>net7.0</TargetFramework>
-    <Nullable>enable</Nullable>
-	<Authors>Andreas Sekulski</Authors>
-  </PropertyGroup>
-  <ItemGroup>
-    <None Remove=".gitignore" />
-  </ItemGroup>
+    <PropertyGroup>
+        <OutputType>WinExe</OutputType>
+        <TargetFramework>net7.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <Authors>Andreas Sekulski</Authors>
+    </PropertyGroup>
+    <ItemGroup>
+        <None Remove=".gitignore"/>
+    </ItemGroup>
 
-  <ItemGroup>
-    <PackageReference Include="Avalonia" Version="0.10.21" />
-    <PackageReference Include="Avalonia.Desktop" Version="0.10.21" />
-    <PackageReference Include="Material.Avalonia" Version="2.5.1" />
-    <PackageReference Include="Prism.Avalonia" Version="8.1.97.1021" />
-    <PackageReference Include="Prism.DryIoc.Avalonia" Version="8.1.97.1021" />
-    <PackageReference Include="XamlNameReferenceGenerator" Version="1.6.1" />
+    <ItemGroup>
+        <PackageReference Include="Avalonia" Version="0.10.21"/>
+        <PackageReference Include="Avalonia.Desktop" Version="0.10.21"/>
+        <PackageReference Include="Material.Avalonia" Version="2.5.1"/>
+        <PackageReference Include="Prism.Avalonia" Version="8.1.97.1021"/>
+        <PackageReference Include="Prism.DryIoc.Avalonia" Version="8.1.97.1021"/>
+        <PackageReference Include="XamlNameReferenceGenerator" Version="1.6.1"/>
 
-    <!--Condition below is needed to remove Avalonia.Diagnostics package from build output in Release configuration.-->
-    <PackageReference Condition="'$(Configuration)' == 'Debug'" Include="Avalonia.Diagnostics" Version="0.10.21" />
-  </ItemGroup>
+        <!--Condition below is needed to remove Avalonia.Diagnostics package from build output in Release configuration.-->
+        <PackageReference Condition="'$(Configuration)' == 'Debug'" Include="Avalonia.Diagnostics" Version="0.10.21"/>
+    </ItemGroup>
 
-  <ItemGroup>
-    <Compile Update="Properties\Resource.Designer.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resource.resx</DependentUpon>
-    </Compile>
-  </ItemGroup>
+    <ItemGroup>
+        <Compile Update="Properties\Resource.Designer.cs">
+            <DesignTime>True</DesignTime>
+            <AutoGen>True</AutoGen>
+            <DependentUpon>Resource.resx</DependentUpon>
+        </Compile>
+    </ItemGroup>
 
-  <ItemGroup>
-    <EmbeddedResource Update="Properties\Resource.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resource.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-  </ItemGroup>
+    <ItemGroup>
+        <EmbeddedResource Update="Properties\Resource.resx">
+            <Generator>ResXFileCodeGenerator</Generator>
+            <LastGenOutput>Resource.Designer.cs</LastGenOutput>
+        </EmbeddedResource>
+    </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="ViewModels\" />
-  </ItemGroup>
+    <ItemGroup>
+        <Folder Include="ViewModels\"/>
+    </ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\..\src\I18N.Avalonia.Prism\I18N.Avalonia.Prism.csproj" />
-  </ItemGroup> 
-        
+    <ItemGroup>
+        <ProjectReference Include="..\..\src\I18N.Avalonia.Prism\I18N.Avalonia.Prism.csproj"/>
+    </ItemGroup>
+
 </Project>

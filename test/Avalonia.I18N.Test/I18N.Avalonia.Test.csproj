@@ -1,53 +1,50 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFrameworks>netcoreapp3.1;net6.0;net7.0</TargetFrameworks>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
-	<LangVersion>10</LangVersion>
-    <IsPackable>false</IsPackable>
-    <IsTestProject>true</IsTestProject>
-  </PropertyGroup>
+    <PropertyGroup>
+        <IsPackable>false</IsPackable>
+        <IsTestProject>true</IsTestProject>
+    </PropertyGroup>
+    
+    <Import Project="../../build/Base.props"/>
 
-  <ItemGroup>
-	  <PackageReference Include="Avalonia" Version="11.0.0" />
-	  <PackageReference Include="FluentAssertions" Version="6.11.0" />
-	  <PackageReference Include="JunitXml.TestLogger" Version="3.0.125" />
-	  <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.6.3" />
-	  <PackageReference Include="Moq" Version="4.18.4" />
-	  <PackageReference Include="xunit" Version="2.5.0" />
-	  <PackageReference Include="xunit.runner.visualstudio" Version="2.4.5">
-		  <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-		  <PrivateAssets>all</PrivateAssets>
-	  </PackageReference>
-	  <PackageReference Include="coverlet.collector" Version="6.0.0">
-		  <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-		  <PrivateAssets>all</PrivateAssets>
-	  </PackageReference>
-  </ItemGroup>
+    <ItemGroup>
+        <PackageReference Include="Avalonia" Version="11.0.0"/>
+        <PackageReference Include="FluentAssertions" Version="6.11.0"/>
+        <PackageReference Include="JunitXml.TestLogger" Version="3.0.125"/>
+        <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.6.3"/>
+        <PackageReference Include="Moq" Version="4.18.4"/>
+        <PackageReference Include="xunit" Version="2.5.0"/>
+        <PackageReference Include="xunit.runner.visualstudio" Version="2.4.5">
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+            <PrivateAssets>all</PrivateAssets>
+        </PackageReference>
+        <PackageReference Include="coverlet.collector" Version="6.0.0">
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+            <PrivateAssets>all</PrivateAssets>
+        </PackageReference>
+    </ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\..\src\I18N.Avalonia.Prism\I18N.Avalonia.Prism.csproj" />
-    <ProjectReference Include="..\..\src\I18N.Avalonia.ReactiveUi\I18N.Avalonia.ReactiveUi.csproj" />
-  </ItemGroup>
+    <ItemGroup>
+        <ProjectReference Include="..\..\src\I18N.Avalonia.Prism\I18N.Avalonia.Prism.csproj"/>
+        <ProjectReference Include="..\..\src\I18N.Avalonia.ReactiveUi\I18N.Avalonia.ReactiveUi.csproj"/>
+    </ItemGroup>
 
-  <ItemGroup>
-	<Compile Update="Properties\Resource.Designer.cs">
-		<DependentUpon>Resource.resx</DependentUpon>
-		<DesignTime>True</DesignTime>
-		<AutoGen>True</AutoGen>
-	</Compile>
-  </ItemGroup>
+    <ItemGroup>
+        <Compile Update="Properties\Resource.Designer.cs">
+            <DependentUpon>Resource.resx</DependentUpon>
+            <DesignTime>True</DesignTime>
+            <AutoGen>True</AutoGen>
+        </Compile>
+    </ItemGroup>
 
-  <ItemGroup>
-	<EmbeddedResource Update="Properties\Resource.resx">
-		<LastGenOutput>Resource.Designer.cs</LastGenOutput>
-		<Generator>ResXFileCodeGenerator</Generator>
-	</EmbeddedResource>
-  </ItemGroup>
+    <ItemGroup>
+        <EmbeddedResource Update="Properties\Resource.resx">
+            <LastGenOutput>Resource.Designer.cs</LastGenOutput>
+            <Generator>ResXFileCodeGenerator</Generator>
+        </EmbeddedResource>
+    </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Helper\Interface\" />
-  </ItemGroup>
-
+    <ItemGroup>
+        <Folder Include="Helper\Interface\"/>
+    </ItemGroup>
 </Project>
