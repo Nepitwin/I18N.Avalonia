@@ -54,6 +54,30 @@ Include prism internationalizing module by .axaml
 xmlns:i18N="clr-namespace:I18N.Avalonia.Prism;assembly=I18N.Avalonia.Prism"
 ```
 
+### Usage in .axaml
+
+```
+<StackPanel>
+    <TextBlock Text="{i18N:PrismLocalization Welcome}"
+               HorizontalAlignment="Center"
+               VerticalAlignment="Center"
+               Margin="0, 24, 0,24"
+               FontSize="17"
+               FontWeight="Heavy" />
+
+    <Button Content="{i18N:PrismLocalization English}"
+            Margin="0,0,0,8"
+            Command="{Binding SwitchLanguage}"
+            CommandParameter="en"/>
+
+    <Button Content="{i18N:PrismLocalization German}"
+            Margin="0,0,0,8"
+            Command="{Binding SwitchLanguage}"
+            CommandParameter="de"/>
+
+</StackPanel>
+```
+
 ### ReactiveUi registration (Splat)
 
 ```dotnet
@@ -74,19 +98,19 @@ xmlns:i18N="clr-namespace:I18N.Avalonia.ReactiveUi;assembly=I18N.Avalonia.Reacti
 
 ```
 <StackPanel>
-    <TextBlock Text="{i18N:PrismLocalizationExtension Welcome}"
-               HorizontalAlignment="Center"
-               VerticalAlignment="Center"
-               Margin="0, 24, 0,24"
-               FontSize="17"
-               FontWeight="Heavy" />
+    <TextBlock Text="{i18N:ReactiveUiLocalization Welcome}"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                Margin="0, 24, 0,24"
+                FontSize="17"
+                FontWeight="Heavy" />
 
-    <Button Content="{i18N:PrismLocalizationExtension English}"
+    <Button Content="{i18N:ReactiveUiLocalization English}"
             Margin="0,0,0,8"
             Command="{Binding SwitchLanguage}"
             CommandParameter="en"/>
 
-    <Button Content="{i18N:PrismLocalizationExtension German}"
+    <Button Content="{i18N:ReactiveUiLocalization German}"
             Margin="0,0,0,8"
             Command="{Binding SwitchLanguage}"
             CommandParameter="de"/>
