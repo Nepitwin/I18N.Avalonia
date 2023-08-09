@@ -27,8 +27,8 @@
 | .NET Core      | ![][3] ![][5] ![][6] ![][7]                       |
 | Avalonia       | ![][Ava-0X] ![][Ava-11]                           |
 | Core           | [![NuGet][Nuget-Core]](https://www.nuget.org/packages/I18N.Avalonia)                                 |
-| Nuget Prism    | [![NuGet][Nuget-Prism]](https://www.nuget.org/packages/I18N.Avalonia.Prism)                                 |
-| Nuget Reactive | [![NuGet][Nuget-Reactive]](https://www.nuget.org/packages/I18N.Avalonia.ReactiveUi)                               |
+| Prism          | [![NuGet][Nuget-Prism]](https://www.nuget.org/packages/I18N.Avalonia.Prism)                                 |
+| Reactive       | [![NuGet][Nuget-Reactive]](https://www.nuget.org/packages/I18N.Avalonia.ReactiveUi)                               |
 
 | Prism                                        | ReactiveUi                                        |
 |----------------------------------------------|---------------------------------------------------|
