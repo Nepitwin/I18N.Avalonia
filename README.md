@@ -19,6 +19,8 @@
 [Nuget-Prism]: https://img.shields.io/nuget/v/I18N.Avalonia.Prism.svg
 [Nuget-Reactive]: https://img.shields.io/nuget/v/I18N.Avalonia.ReactiveUi.svg
 
+[Prism-Example]: https://raw.githubusercontent.com/Nepitwin/I18N.Avalonia/main/assets/Prism.gif
+[Reactive-Example]: https://raw.githubusercontent.com/Nepitwin/I18N.Avalonia/main/assets/ReactiveUi.gif
 
 |                |                                                   |
 |----------------|---------------------------------------------------|
@@ -32,7 +34,7 @@
 
 | Prism                                        | ReactiveUi                                        |
 |----------------------------------------------|---------------------------------------------------|
-| <img src="https://github.com/Nepitwin/I18N.Avalonia/blob/main/assets/Prism.gif?raw=true" width="300" /> | <img src="https://github.com/Nepitwin/I18N.Avalonia/blob/main/assets/ReactiveUi.gif?raw=true" width="300" /> |
+| ![][Prism-Example]  | ![][Reactive-Example] |
 
 # How to use it
 
