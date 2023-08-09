@@ -30,7 +30,7 @@
 
 | Prism                                        | ReactiveUi                                        |
 |----------------------------------------------|---------------------------------------------------|
-| <img src="./assets/Prism.gif" width="300" /> | <img src="./assets/ReactiveUi.gif" width="300" /> |
+| <img src="https://github.com/Nepitwin/I18N.Avalonia/blob/main/assets/Prism.gif?raw=true" width="300" /> | <img src="https://github.com/Nepitwin/I18N.Avalonia/blob/main/assets/ReactiveUi.gif?raw=true" width="300" /> |
 
 # How to use it
 
