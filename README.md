@@ -15,6 +15,7 @@
 [Ava-0X]: https://img.shields.io/badge/0.21-Support-green
 [Ava-11]: https://img.shields.io/badge/11-Support-green
 
+[Nuget-Core]: https://img.shields.io/nuget/v/I18N.Avalonia.svg
 [Nuget-Prism]: https://img.shields.io/nuget/v/I18N.Avalonia.Prism.svg
 [Nuget-Reactive]: https://img.shields.io/nuget/v/I18N.Avalonia.ReactiveUi.svg
 
@@ -25,6 +26,7 @@
 | Builds         | ![][LinuxBuild] ![][MacOSBuild] ![][WindowsBuild] |
 | .NET Core      | ![][3] ![][5] ![][6] ![][7]                       |
 | Avalonia       | ![][Ava-0X] ![][Ava-11]                           |
+| Core           | [![NuGet][Nuget-Core]](https://www.nuget.org/packages/I18N.Avalonia)                                 |
 | Nuget Prism    | [![NuGet][Nuget-Prism]](https://www.nuget.org/packages/I18N.Avalonia.Prism)                                 |
 | Nuget Reactive | [![NuGet][Nuget-Reactive]](https://www.nuget.org/packages/I18N.Avalonia.ReactiveUi)                               |
 
