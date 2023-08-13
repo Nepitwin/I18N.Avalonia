@@ -15,9 +15,9 @@
 [Ava-0X]: https://img.shields.io/badge/0.21-Support-green
 [Ava-11]: https://img.shields.io/badge/11-Support-green
 
-[Nuget-Core]: https://img.shields.io/nuget/v/I18N.Avalonia.svg
-[Nuget-Prism]: https://img.shields.io/nuget/v/I18N.Avalonia.Prism.svg
-[Nuget-Reactive]: https://img.shields.io/nuget/v/I18N.Avalonia.ReactiveUi.svg
+[Nuget-Core]: https://buildstats.info/nuget/I18N.Avalonia?dWidth=70
+[Nuget-Prism]: https://buildstats.info/nuget/I18N.Avalonia.Prism?dWidth=70
+[Nuget-Reactive]: https://buildstats.info/nuget/I18N.Avalonia.ReactiveUi?dWidth=70
 
 [Prism-Example]: https://raw.githubusercontent.com/Nepitwin/I18N.Avalonia/main/assets/Prism.gif
 [Reactive-Example]: https://raw.githubusercontent.com/Nepitwin/I18N.Avalonia/main/assets/ReactiveUi.gif
