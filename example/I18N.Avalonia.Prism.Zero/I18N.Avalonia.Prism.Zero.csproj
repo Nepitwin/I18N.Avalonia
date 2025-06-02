@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
     <PropertyGroup>
         <OutputType>WinExe</OutputType>
-        <TargetFramework>net7.0</TargetFramework>
+        <TargetFramework>net9.0</TargetFramework>
         <Nullable>enable</Nullable>
         <Authors>Andreas Sekulski</Authors>
     </PropertyGroup>
@@ -10,8 +10,8 @@
     </ItemGroup>
 
     <ItemGroup>
-        <PackageReference Include="Avalonia" Version="0.10.21"/>
-        <PackageReference Include="Avalonia.Desktop" Version="0.10.21"/>
+        <PackageReference Include="Avalonia" Version="0.10.22"/>
+        <PackageReference Include="Avalonia.Desktop" Version="0.10.22"/>
         <PackageReference Include="Material.Avalonia" Version="2.5.1"/>
         <PackageReference Include="Prism.Avalonia" Version="8.1.97.1021"/>
         <PackageReference Include="Prism.DryIoc.Avalonia" Version="8.1.97.1021"/>

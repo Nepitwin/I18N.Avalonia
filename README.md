@@ -2,22 +2,24 @@
 
 [license]: https://img.shields.io/github/license/Nepitwin/I18N.Avalonia?style=flat-square
 
-[LinuxBuild]: https://github.com/Nepitwin/I18N.Avalonia/actions/workflows/linux.yml/badge.svg
-[MacOSBuild]: https://github.com/Nepitwin/I18N.Avalonia/actions/workflows/macos.yml/badge.svg
-[WindowsBuild]: https://github.com/Nepitwin/I18N.Avalonia/actions/workflows/windows.yml/badge.svg
+[LinuxBuild]: https://github.com/Nepitwin/I18N.Avalonia/actions/workflows/linux.yml/badge.svg?branch=main
+[MacOSBuild]: https://github.com/Nepitwin/I18N.Avalonia/actions/workflows/macos.yml/badge.svg?branch=main
+[WindowsBuild]: https://github.com/Nepitwin/I18N.Avalonia/actions/workflows/windows.yml/badge.svg?branch=main
 
 [NetCore]: https://img.shields.io/badge/NetCore-blue
 [3]: https://img.shields.io/badge/3-Support-blue
 [5]: https://img.shields.io/badge/5-Support-blue
 [6]: https://img.shields.io/badge/6-Support-blue
 [7]: https://img.shields.io/badge/7-Support-blue
+[8]: https://img.shields.io/badge/8-Support-blue
+[9]: https://img.shields.io/badge/9-Support-blue
 
 [Ava-0X]: https://img.shields.io/badge/0.21-Support-green
 [Ava-11]: https://img.shields.io/badge/11-Support-green
 
-[Nuget-Core]: https://buildstats.info/nuget/I18N.Avalonia?dWidth=70
-[Nuget-Prism]: https://buildstats.info/nuget/I18N.Avalonia.Prism?dWidth=70
-[Nuget-Reactive]: https://buildstats.info/nuget/I18N.Avalonia.ReactiveUi?dWidth=70
+[NugetCore]: https://img.shields.io/nuget/v/I18N.Avalonia
+[NugetPrism]: https://img.shields.io/nuget/v/I18N.Avalonia.Prism
+[NugetReactive]: https://img.shields.io/nuget/v/I18N.Avalonia.ReactiveUi
 
 [Prism-Example]: https://raw.githubusercontent.com/Nepitwin/I18N.Avalonia/main/assets/Prism.gif
 [Reactive-Example]: https://raw.githubusercontent.com/Nepitwin/I18N.Avalonia/main/assets/ReactiveUi.gif
@@ -26,11 +28,11 @@
 |----------------|---------------------------------------------------|
 | License        | ![][license]                                      |
 | Builds         | ![][LinuxBuild] ![][MacOSBuild] ![][WindowsBuild] |
-| .NET Core      | ![][3] ![][5] ![][6] ![][7]                       |
+| .NET Core      | ![][3] ![][5] ![][6] ![][7] ![][8] ![][9]         |
 | Avalonia       | ![][Ava-0X] ![][Ava-11]                           |
-| Core           | [![NuGet][Nuget-Core]](https://www.nuget.org/packages/I18N.Avalonia)                                 |
-| Prism          | [![NuGet][Nuget-Prism]](https://www.nuget.org/packages/I18N.Avalonia.Prism)                                 |
-| Reactive       | [![NuGet][Nuget-Reactive]](https://www.nuget.org/packages/I18N.Avalonia.ReactiveUi)                               |
+| Core           | ![][NugetCore]                                    |
+| Prism          | ![][NugetPrism]                                   |
+| Reactive       | ![][NugetReactive]                                |
 
 | Prism                                        | ReactiveUi                                        |
 |----------------------------------------------|---------------------------------------------------|
