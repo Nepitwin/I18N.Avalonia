@@ -68,8 +68,6 @@ jobs:
               uses: actions/setup-dotnet@v2
               with:	
                 dotnet-version: 7.0.x            
-            - name: Install dependencies
-              run: dotnet restore
             - name: Setup .NET Core SDK 8
               uses: actions/setup-dotnet@v2
               with:	
@@ -78,6 +76,8 @@ jobs:
               uses: actions/setup-dotnet@v2
               with:	
                 dotnet-version: 9.0.x              
+            - name: Install dependencies
+              run: dotnet restore
             - name: Build
               run: dotnet build --configuration Release --no-restore
             - name: Test
