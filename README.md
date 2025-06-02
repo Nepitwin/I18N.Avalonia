@@ -17,6 +17,9 @@
 [Ava-0X]: https://img.shields.io/badge/0.21-Support-green
 [Ava-11]: https://img.shields.io/badge/11-Support-green
 
+[Prism-Example]: https://raw.githubusercontent.com/Nepitwin/I18N.Avalonia/main/assets/Prism.gif
+[Reactive-Example]: https://raw.githubusercontent.com/Nepitwin/I18N.Avalonia/main/assets/ReactiveUi.gif
+
 |                |                                                   |
 |----------------|---------------------------------------------------|
 | License        | ![][license]                                      |
@@ -26,8 +29,6 @@
 | Core           | [![](https://img.shields.io/nuget/v/I18N.Avalonia.svg)](https://www.nuget.org/packages/I18N.Avalonia) |
 | Prism          | [![](https://img.shields.io/nuget/v/I18N.Avalonia.Prism.svg)](https://www.nuget.org/packages/I18N.Avalonia.Prism) |
 | Reactive       | [![](https://img.shields.io/nuget/v/I18N.Avalonia.ReactiveUi.svg)](https://www.nuget.org/packages/I18N.Avalonia.ReactiveUi) |
-
-[![][NugetCore](https://www.nuget.org/packages/I18N.Avalonia)]
 
 | Prism                                        | ReactiveUi                                        |
 |----------------------------------------------|---------------------------------------------------|
