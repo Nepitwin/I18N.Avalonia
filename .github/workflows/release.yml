@@ -6,7 +6,7 @@ on:
 
 jobs:
     macos:
-        runs-on: macos-latest
+        runs-on: macos-13 # https://github.com/actions/runner-images
         permissions:
             id-token: write
             contents: read
@@ -24,7 +24,15 @@ jobs:
             - name: Setup .NET Core SDK 7
               uses: actions/setup-dotnet@v2
               with:	
-                dotnet-version: 7.0.x            
+                dotnet-version: 7.0.x
+            - name: Setup .NET Core SDK 8
+              uses: actions/setup-dotnet@v2
+              with:	
+                dotnet-version: 8.0.x
+            - name: Setup .NET Core SDK 9
+              uses: actions/setup-dotnet@v2
+              with:	
+                dotnet-version: 9.0.x
             - name: Install dependencies
               run: dotnet restore
             - name: Build
@@ -41,7 +49,7 @@ jobs:
                 fail-on-error: true                
 
     windows:
-        runs-on: windows-latest
+        runs-on: windows-2022 # https://github.com/actions/runner-images
         permissions:
             id-token: write
             contents: read
@@ -76,7 +84,7 @@ jobs:
                 fail-on-error: true
 
     ubuntu:
-        runs-on: ubuntu-latest
+        runs-on: ubuntu-22.04 # https://github.com/actions/runner-images
         needs: [macos, windows]
         permissions:
           id-token: write

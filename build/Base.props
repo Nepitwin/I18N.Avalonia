@@ -2,13 +2,13 @@
 <Project DefaultTargets="Build"
          xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
     <PropertyGroup>
-        <TargetFrameworks>netcoreapp3.1;net6.0;net7.0</TargetFrameworks>
+        <TargetFrameworks>netcoreapp3.1;net6.0;net7.0;net8.0;net9.0</TargetFrameworks>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
         <LangVersion>10</LangVersion>
         <Authors>Andreas Sekulski</Authors>
-        <Copyright>© 2023 Andreas Sekulski</Copyright>
-        <Version>1.0.1</Version>
+        <Copyright>© 2025 Andreas Sekulski</Copyright>
+        <Version>1.0.2</Version>
         <PackageLicenseFile>LICENSE</PackageLicenseFile>
         <PackageReadmeFile>README.md</PackageReadmeFile>
         <RepositoryUrl>https://github.com/Nepitwin/I18N.Avalonia</RepositoryUrl>

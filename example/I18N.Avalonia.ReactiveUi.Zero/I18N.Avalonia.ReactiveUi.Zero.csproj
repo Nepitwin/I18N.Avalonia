@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
     <PropertyGroup>
         <OutputType>WinExe</OutputType>
-        <TargetFramework>net6.0</TargetFramework>
+        <TargetFramework>net9.0</TargetFramework>
         <Nullable>enable</Nullable>
         <NeutralLanguage>en</NeutralLanguage>
     </PropertyGroup>
@@ -10,9 +10,9 @@
     </ItemGroup>
 
     <ItemGroup>
-        <PackageReference Include="Avalonia" Version="0.10.21"/>
-        <PackageReference Include="Avalonia.Desktop" Version="0.10.21"/>
-        <PackageReference Include="Avalonia.ReactiveUI" Version="0.10.21"/>
+	    <PackageReference Include="Avalonia" Version="0.10.22"/>
+	    <PackageReference Include="Avalonia.Desktop" Version="0.10.22"/>
+        <PackageReference Include="Avalonia.ReactiveUI" Version="0.10.22"/>
         <PackageReference Include="XamlNameReferenceGenerator" Version="1.6.1"/>
 
         <!--Condition below is needed to remove Avalonia.Diagnostics package from build output in Release configuration.-->
