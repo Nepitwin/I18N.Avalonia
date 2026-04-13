@@ -5,21 +5,22 @@ namespace I18N.Avalonia.Prism;
 
 public class PrismLocalizationExtension: LocalizationExtension
 {
-    public PrismLocalizationExtension(string key) : base(key)
+    public override ILocalizer Localizer
     {
-
+        get
+        {
+            try
+            {
+                return ContainerLocator.Container.Resolve<ILocalizer>();
+            }
+            catch (Exception)
+            {
+                return new Visualizer();
+            }
+        }
     }
 
-    public override ILocalizer GetLocalizerOrDefault()
+    public PrismLocalizationExtension(string key) : base(key)
     {
-        try
-        {
-            return ContainerLocator.Container.Resolve<ILocalizer>();
-        }
-        catch (Exception)
-        {
-            // If no dependency can be found use an default visualizer
-            return new Visualizer();
-        }
     }
 }

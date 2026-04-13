@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+		<Product>ReactiveUi-Avalonia I18N</Product>
+		<Description>ReactiveUi avalonia Internationalization module</Description>
+	</PropertyGroup>
+
+	<Import Project="../../build/Base.props" />
+
+	<ItemGroup>
+		<PackageReference Include="ReactiveUI.Avalonia" Version="11.3.0" />
+		<PackageReference Include="Splat" Version="19.1.1" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\I18N.Core\I18N.Avalonia.csproj" />
+	</ItemGroup>
+
+</Project>

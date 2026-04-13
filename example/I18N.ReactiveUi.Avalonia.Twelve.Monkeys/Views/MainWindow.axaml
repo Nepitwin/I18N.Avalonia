@@ -1,0 +1,29 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:i18N="clr-namespace:I18N.ReactiveUi.Avalonia;assembly=I18N.ReactiveUi.Avalonia"
+        xmlns:viewModels="clr-namespace:I18N.ReactiveUi.Avalonia.Twelve.Monkeys.ViewModels"
+        Title="{i18N:ReactiveUiAvaloniaLocalizationExtension Title}"
+        Height="350"
+        Width="525"
+        x:Class="I18N.ReactiveUi.Avalonia.Twelve.Monkeys.Views.MainWindow"
+        x:DataType="viewModels:MainWindowViewModel">
+    <StackPanel>
+        <TextBlock Text="{i18N:ReactiveUiAvaloniaLocalizationExtension Welcome}"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Center"
+                   Margin="0, 24, 0,24"
+                   FontSize="17"
+                   FontWeight="Heavy" />
+
+        <Button Content="{i18N:ReactiveUiAvaloniaLocalizationExtension English}"
+                Margin="0,0,0,8"
+                Command="{Binding SwitchLanguage}"
+                CommandParameter="en"/>
+
+        <Button Content="{i18N:ReactiveUiAvaloniaLocalizationExtension German}"
+                Margin="0,0,0,8"
+                Command="{Binding SwitchLanguage}"
+                CommandParameter="de"/>
+
+    </StackPanel>
+</Window>

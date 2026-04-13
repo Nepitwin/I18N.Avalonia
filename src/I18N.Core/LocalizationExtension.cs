@@ -1,14 +1,13 @@
 using Avalonia.Data;
 using Avalonia.Markup.Xaml;
-using Avalonia.Markup.Xaml.MarkupExtensions;
 using I18N.Avalonia.Interface;
 
 namespace I18N.Avalonia;
 
 public abstract class LocalizationExtension: MarkupExtension, ILocalizerContainer
 {
-    public abstract ILocalizer GetLocalizerOrDefault();
-
+    public abstract ILocalizer Localizer { get; }
+    
     public string Key { get; set; }
 
     public string Context { get; set; } = string.Empty;
@@ -27,12 +26,10 @@ public abstract class LocalizationExtension: MarkupExtension, ILocalizerContaine
             keyToUse = $"{Context}/{Key}";
         }
 
-        var binding = new ReflectionBindingExtension($"[{keyToUse}]")
+        return new ReflectionBinding($"[{keyToUse}]")
         {
             Mode = BindingMode.OneWay,
-            Source = GetLocalizerOrDefault()
+            Source = Localizer
         };
-
-        return binding.ProvideValue(serviceProvider);
     }
 }

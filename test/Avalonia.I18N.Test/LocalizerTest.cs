@@ -1,6 +1,6 @@
 ﻿using System.Collections;
 using System.Globalization;
-using FluentAssertions;
+using AwesomeAssertions;
 using I18N.Avalonia.Interface;
 
 namespace I18N.Avalonia.Test;

@@ -1,11 +1,12 @@
-﻿using System.Collections;
-using Avalonia.Data;
-using FluentAssertions;
+﻿using Avalonia.Data;
+using AwesomeAssertions;
 using I18N.Avalonia.Prism;
 using I18N.Avalonia.ReactiveUi;
 using I18N.Avalonia.Test.Helper;
 using I18N.Avalonia.Test.Helper.Interface;
+using I18N.ReactiveUi.Avalonia;
 using Moq;
+using System.Collections;
 namespace I18N.Avalonia.Test;
 
 public class LocalizationExtensionTest
@@ -14,10 +15,12 @@ public class LocalizationExtensionTest
     {
         private readonly List<object[]> _data = new()
         {
+            new object[] { new AvaloniaReactiveUiLocalizationExtension("Key"), new SplatContainer(), typeof(Localizer) },
+            new object[] { new AvaloniaReactiveUiLocalizationExtension("Key"), new EmptyContainer(), typeof(Visualizer) },
             new object[] { new PrismLocalizationExtension("Key"), new PrismContainer(), typeof(Localizer) },
-            new object[] { new ReactiveUiLocalizationExtension("Key"), new SplatContainer(), typeof(Localizer) },
             new object[] { new PrismLocalizationExtension("Key"), new EmptyContainer(), typeof(Visualizer) },
-            new object[] { new ReactiveUiLocalizationExtension("Key"), new EmptyContainer(), typeof(Visualizer) },
+            new object[] { new ReactiveUiAvaloniaLocalizationExtension("Key"), new SplatContainer(), typeof(Localizer) },
+            new object[] { new ReactiveUiAvaloniaLocalizationExtension("Key"), new EmptyContainer(), typeof(Visualizer) },
         };
 
         public IEnumerator<object[]> GetEnumerator() => _data.GetEnumerator();
@@ -38,9 +41,9 @@ public class LocalizationExtensionTest
             localizationSource.Key.Should().Be("Key");
             var binding = localizationSource.ProvideValue(mockServiceProvider.Object);
 
-            binding.Should().BeOfType(typeof(Binding));
+            binding.Should().BeOfType(typeof(ReflectionBinding));
 
-            var avaloniaBinding = (Binding)binding;
+            var avaloniaBinding = (ReflectionBinding)binding;
             avaloniaBinding.Path.Should().Be("[Key]");
             avaloniaBinding.Source.Should().BeOfType(expectedType);
         }
@@ -66,9 +69,9 @@ public class LocalizationExtensionTest
 
             var binding = localizationSource.ProvideValue(mockServiceProvider.Object);
 
-            binding.Should().BeOfType(typeof(Binding));
+            binding.Should().BeOfType(typeof(ReflectionBinding));
 
-            var avaloniaBinding = (Binding)binding;
+            var avaloniaBinding = (ReflectionBinding)binding;
             avaloniaBinding.Path.Should().Be("[Context/Key]");
             avaloniaBinding.Source.Should().BeOfType(expectedType);
         }

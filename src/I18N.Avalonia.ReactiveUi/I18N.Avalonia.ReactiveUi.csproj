@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
@@ -10,6 +10,7 @@
 
     <ItemGroup>
         <PackageReference Include="Avalonia.ReactiveUI" Version="0.10.21"/>
+        <PackageReference Include="Splat" Version="19.1.1" />
     </ItemGroup>
 
     <ItemGroup>

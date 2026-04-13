@@ -1,0 +1,42 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <OutputType>WinExe</OutputType>
+        <TargetFramework>net9.0</TargetFramework>
+	    <TargetFrameworks>net8.0;net9.0</TargetFrameworks>
+        <Nullable>enable</Nullable>
+        <NeutralLanguage>en</NeutralLanguage>
+    </PropertyGroup>
+    <ItemGroup>
+        <None Remove=".gitignore"/>
+    </ItemGroup>
+
+    <ItemGroup>
+	    <PackageReference Include="Avalonia" Version="12.0.0"/>
+	    <PackageReference Include="Avalonia.Desktop" Version="12.0.0"/>
+        <PackageReference Include="Avalonia.Themes.Fluent" Version="12.0.0"/>
+        <PackageReference Include="Avalonia.ReactiveUI" Version="11.3.8"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <Folder Include="ViewModels\"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\..\src\I18N.Avalonia.ReactiveUi\I18N.Avalonia.ReactiveUi.csproj"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <Compile Update="Properties\Resource.Designer.cs">
+            <DependentUpon>Resource.resx</DependentUpon>
+            <DesignTime>True</DesignTime>
+            <AutoGen>True</AutoGen>
+        </Compile>
+    </ItemGroup>
+
+    <ItemGroup>
+        <EmbeddedResource Update="Properties\Resource.resx">
+            <LastGenOutput>Resource.Designer.cs</LastGenOutput>
+            <Generator>ResXFileCodeGenerator</Generator>
+        </EmbeddedResource>
+    </ItemGroup>
+</Project>

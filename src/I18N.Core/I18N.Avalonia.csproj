@@ -9,6 +9,6 @@
     <Import Project="../../build/Base.props"/>
 
     <ItemGroup>
-        <PackageReference Include="Avalonia" Version="0.10.21"/>
+        <PackageReference Include="Avalonia" Version="12.0.0"/>
     </ItemGroup>
 </Project>

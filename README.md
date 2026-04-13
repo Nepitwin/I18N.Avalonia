@@ -100,19 +100,19 @@ xmlns:i18N="clr-namespace:I18N.Avalonia.ReactiveUi;assembly=I18N.Avalonia.Reacti
 
 ```
 <StackPanel>
-    <TextBlock Text="{i18N:ReactiveUiLocalization Welcome}"
+    <TextBlock Text="{i18N:AvaloniaReactiveUiLocalizationExtension Welcome}"
                 HorizontalAlignment="Center"
                 VerticalAlignment="Center"
                 Margin="0, 24, 0,24"
                 FontSize="17"
                 FontWeight="Heavy" />
 
-    <Button Content="{i18N:ReactiveUiLocalization English}"
+    <Button Content="{i18N:AvaloniaReactiveUiLocalizationExtension English}"
             Margin="0,0,0,8"
             Command="{Binding SwitchLanguage}"
             CommandParameter="en"/>
 
-    <Button Content="{i18N:ReactiveUiLocalization German}"
+    <Button Content="{i18N:AvaloniaReactiveUiLocalizationExtension German}"
             Margin="0,0,0,8"
             Command="{Binding SwitchLanguage}"
             CommandParameter="de"/>

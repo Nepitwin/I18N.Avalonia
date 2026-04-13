@@ -13,18 +13,6 @@ jobs:
             checks: write
         steps:
             - uses: actions/checkout@v3
-            - name: Setup .NET Core SDK 3
-              uses: actions/setup-dotnet@v2
-              with:	
-                dotnet-version: 3.1.x
-            - name: Setup .NET Core SDK 6
-              uses: actions/setup-dotnet@v2
-              with:	
-                dotnet-version: 6.0.x
-            - name: Setup .NET Core SDK 7
-              uses: actions/setup-dotnet@v2
-              with:	
-                dotnet-version: 7.0.x
             - name: Setup .NET Core SDK 8
               uses: actions/setup-dotnet@v2
               with:	
@@ -33,6 +21,10 @@ jobs:
               uses: actions/setup-dotnet@v2
               with:	
                 dotnet-version: 9.0.x
+            - name: Setup .NET Core SDK 10
+              uses: actions/setup-dotnet@v2
+              with:	
+                dotnet-version: 10.0.x
             - name: Install dependencies
               run: dotnet restore
             - name: Build

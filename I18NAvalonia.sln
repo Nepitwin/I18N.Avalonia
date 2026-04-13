@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.6.33815.320
+# Visual Studio Version 18
+VisualStudioVersion = 18.4.11626.88
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "I18N.Avalonia.Prism", "src\I18N.Avalonia.Prism\I18N.Avalonia.Prism.csproj", "{446E040F-84F1-49F9-B3B0-916F5A741255}"
 EndProject
@@ -11,17 +11,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "I18N.Avalonia", "src\I18N.C
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Testing", "Testing", "{B9302A6B-5044-43A1-9C70-6105DD4D38B0}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "I18N.Avalonia.Test", "test\Avalonia.I18N.Test\I18N.Avalonia.Test.csproj", "{58616775-B4B2-4893-A46F-83F0D6578017}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Example", "Example", "{FE408442-E59D-49EB-A66B-989F13B2447A}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "I18N.Avalonia.Prism.Eleven", "example\I18N.Avalonia.Prism.Eleven\I18N.Avalonia.Prism.Eleven.csproj", "{5CEB922F-5B11-4A60-9455-7D5F13E234B7}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "I18N.Avalonia.Prism.Zero", "example\I18N.Avalonia.Prism.Zero\I18N.Avalonia.Prism.Zero.csproj", "{489A8C5D-1B47-4042-9F23-385BE8187BF9}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "I18N.Avalonia.ReactiveUi.Eleven", "example\I18N.Avalonia.ReactiveUi.Eleven\I18N.Avalonia.ReactiveUi.Eleven.csproj", "{2D8ADA7A-E620-4D55-9C72-856CCA5267FC}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "I18N.Avalonia.ReactiveUi.Zero", "example\I18N.Avalonia.ReactiveUi.Zero\I18N.Avalonia.ReactiveUi.Zero.csproj", "{5E64D2AB-A576-4972-B62F-F32AE7F1423D}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Build", "Build", "{FD8F8F26-834D-4097-8E6A-9D3B69BFB114}"
 	ProjectSection(SolutionItems) = preProject
@@ -35,6 +25,18 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Workflow", "Workflow", "{E5
 		.github\workflows\release.yml = .github\workflows\release.yml
 		.github\workflows\windows.yml = .github\workflows\windows.yml
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "I18N.ReactiveUi.Avalonia", "src\I18N.ReactiveUi.Avalonia\I18N.ReactiveUi.Avalonia.csproj", "{C6109FB1-B758-48A9-A2F1-5296B03865BD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Library", "Library", "{F5F41256-2C13-473B-B27D-7290A4B38908}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "I18N.Avalonia.Test", "test\Avalonia.I18N.Test\I18N.Avalonia.Test.csproj", "{CC52B1B5-B506-9F4A-8906-3B3F1A780521}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "I18N.ReactiveUi.Avalonia.Twelve.Monkeys", "example\I18N.ReactiveUi.Avalonia.Twelve.Monkeys\I18N.ReactiveUi.Avalonia.Twelve.Monkeys.csproj", "{22A99F2F-59D0-5F61-E867-ACB7F38E1CF7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "I18N.Avalonia.ReactiveUi.Twelve.Monkeys", "example\I18N.Avalonia.ReactiveUi.Twelve.Monkeys\I18N.Avalonia.ReactiveUi.Twelve.Monkeys.csproj", "{0661630A-903C-41CC-63C7-4EC4E84F25C9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "I18N.Avalonia.Prism.Twelve.Monkeys", "example\I18N.Avalonia.Prism.Twelve.Monkeys\I18N.Avalonia.Prism.Twelve.Monkeys.csproj", "{82DE1CBF-BF50-EB1E-C4F3-97E574058148}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -54,36 +56,39 @@ Global
 		{3D5DF9CA-EB3D-4EE4-8DA7-5E5CE33ED695}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3D5DF9CA-EB3D-4EE4-8DA7-5E5CE33ED695}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3D5DF9CA-EB3D-4EE4-8DA7-5E5CE33ED695}.Release|Any CPU.Build.0 = Release|Any CPU
-		{58616775-B4B2-4893-A46F-83F0D6578017}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{58616775-B4B2-4893-A46F-83F0D6578017}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{58616775-B4B2-4893-A46F-83F0D6578017}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{58616775-B4B2-4893-A46F-83F0D6578017}.Release|Any CPU.Build.0 = Release|Any CPU
-		{5CEB922F-5B11-4A60-9455-7D5F13E234B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5CEB922F-5B11-4A60-9455-7D5F13E234B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5CEB922F-5B11-4A60-9455-7D5F13E234B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5CEB922F-5B11-4A60-9455-7D5F13E234B7}.Release|Any CPU.Build.0 = Release|Any CPU
-		{489A8C5D-1B47-4042-9F23-385BE8187BF9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{489A8C5D-1B47-4042-9F23-385BE8187BF9}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{489A8C5D-1B47-4042-9F23-385BE8187BF9}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{489A8C5D-1B47-4042-9F23-385BE8187BF9}.Release|Any CPU.Build.0 = Release|Any CPU
-		{2D8ADA7A-E620-4D55-9C72-856CCA5267FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2D8ADA7A-E620-4D55-9C72-856CCA5267FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2D8ADA7A-E620-4D55-9C72-856CCA5267FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2D8ADA7A-E620-4D55-9C72-856CCA5267FC}.Release|Any CPU.Build.0 = Release|Any CPU
-		{5E64D2AB-A576-4972-B62F-F32AE7F1423D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5E64D2AB-A576-4972-B62F-F32AE7F1423D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5E64D2AB-A576-4972-B62F-F32AE7F1423D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5E64D2AB-A576-4972-B62F-F32AE7F1423D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C6109FB1-B758-48A9-A2F1-5296B03865BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C6109FB1-B758-48A9-A2F1-5296B03865BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C6109FB1-B758-48A9-A2F1-5296B03865BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C6109FB1-B758-48A9-A2F1-5296B03865BD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CC52B1B5-B506-9F4A-8906-3B3F1A780521}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CC52B1B5-B506-9F4A-8906-3B3F1A780521}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CC52B1B5-B506-9F4A-8906-3B3F1A780521}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CC52B1B5-B506-9F4A-8906-3B3F1A780521}.Release|Any CPU.Build.0 = Release|Any CPU
+		{22A99F2F-59D0-5F61-E867-ACB7F38E1CF7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{22A99F2F-59D0-5F61-E867-ACB7F38E1CF7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{22A99F2F-59D0-5F61-E867-ACB7F38E1CF7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{22A99F2F-59D0-5F61-E867-ACB7F38E1CF7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0661630A-903C-41CC-63C7-4EC4E84F25C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0661630A-903C-41CC-63C7-4EC4E84F25C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0661630A-903C-41CC-63C7-4EC4E84F25C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0661630A-903C-41CC-63C7-4EC4E84F25C9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{82DE1CBF-BF50-EB1E-C4F3-97E574058148}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{82DE1CBF-BF50-EB1E-C4F3-97E574058148}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{82DE1CBF-BF50-EB1E-C4F3-97E574058148}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{82DE1CBF-BF50-EB1E-C4F3-97E574058148}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{58616775-B4B2-4893-A46F-83F0D6578017} = {B9302A6B-5044-43A1-9C70-6105DD4D38B0}
-		{5CEB922F-5B11-4A60-9455-7D5F13E234B7} = {FE408442-E59D-49EB-A66B-989F13B2447A}
-		{489A8C5D-1B47-4042-9F23-385BE8187BF9} = {FE408442-E59D-49EB-A66B-989F13B2447A}
-		{2D8ADA7A-E620-4D55-9C72-856CCA5267FC} = {FE408442-E59D-49EB-A66B-989F13B2447A}
-		{5E64D2AB-A576-4972-B62F-F32AE7F1423D} = {FE408442-E59D-49EB-A66B-989F13B2447A}
+		{446E040F-84F1-49F9-B3B0-916F5A741255} = {F5F41256-2C13-473B-B27D-7290A4B38908}
+		{F0FDBEBB-2F50-42F5-9E01-5505518FA369} = {F5F41256-2C13-473B-B27D-7290A4B38908}
+		{3D5DF9CA-EB3D-4EE4-8DA7-5E5CE33ED695} = {F5F41256-2C13-473B-B27D-7290A4B38908}
+		{C6109FB1-B758-48A9-A2F1-5296B03865BD} = {F5F41256-2C13-473B-B27D-7290A4B38908}
+		{CC52B1B5-B506-9F4A-8906-3B3F1A780521} = {B9302A6B-5044-43A1-9C70-6105DD4D38B0}
+		{22A99F2F-59D0-5F61-E867-ACB7F38E1CF7} = {FE408442-E59D-49EB-A66B-989F13B2447A}
+		{0661630A-903C-41CC-63C7-4EC4E84F25C9} = {FE408442-E59D-49EB-A66B-989F13B2447A}
+		{82DE1CBF-BF50-EB1E-C4F3-97E574058148} = {FE408442-E59D-49EB-A66B-989F13B2447A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {AF34CF32-E744-411B-959D-BC0AD5FF5315}
